@@ -9,7 +9,7 @@ jacket_link = s('//*[@id="maincontent"]/div[3]/div/ul/li[32]/a')
 search_results_header = s('//h1/span[@data-ui-id="page-title-wrapper"]')
 
 
-def open_page():
+def visit():
     browser.open(url)
 
 
