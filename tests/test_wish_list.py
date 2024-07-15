@@ -4,7 +4,7 @@ import pytest
 from pages import wish_list
 
 # failing after 10 runs because of sharing restrictions on account -> Automatize new account creation for every 10 runs
-@pytest.mark.xfail
+# @pytest.mark.xfail
 @allure.link('https://trello.com/c/bd7oN49R')
 @allure.title('TC_014.001.003 | Wish list > Wish list sharing using the "Share Wish List" button')
 def test_wishlist_sharing():
