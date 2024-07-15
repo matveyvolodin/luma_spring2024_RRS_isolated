@@ -3,6 +3,11 @@ name: CI
 on:
   workflow_dispatch
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   tests-running:
     runs-on: ubuntu-latest
