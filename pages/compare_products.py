@@ -27,9 +27,14 @@ gear_bags_page = 'https://magento.softwaretestingboard.com/gear/bags.html'
 gear_fitness_equipment_page = 'https://magento.softwaretestingboard.com/gear/fitness-equipment.html'
 gear_watches_page = 'https://magento.softwaretestingboard.com/gear/watches.html'
 gear_sale_page = 'https://magento.softwaretestingboard.com/sale.html'
-
+compare_products_page = 'https://magento.softwaretestingboard.com/catalog/product_compare/'
 
 compare_products_block = s('#block-compare-heading')
+product_name_in_the_compare_products_block = s('(//strong[@class="product-item-name"])[last()]')
+product_name_on_the_compare_product_page = s('//strong[@class="product-item-name"]')
+# Push it messanger bag page
+product_url = 'https://magento.softwaretestingboard.com/push-it-messenger-bag.html'
+add_to_compare_button = s('//a[@class="action tocompare"]')
 
 
 def visit(url):
@@ -38,3 +43,9 @@ def visit(url):
 
 def compare_products_block_should_be_presented_on_the_page():
     compare_products_block.should(be.present)
+
+
+def add_product_to_compare():
+    visit(product_url)
+    add_to_compare_button.click()
+
