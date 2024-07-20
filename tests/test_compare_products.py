@@ -55,3 +55,11 @@ def test_added_to_compare_product_is_presented_on_the_compare_products_page():
     compare_products.visit(compare_products.compare_products_page)
     compare_products.product_name_on_the_compare_product_page.should(have.text("Push It Messenger Bag"))
 
+
+@allure.title('TC_013.001.008 | Compare products | > Redirecting to the "Compare products" page after clicking'
+              'the "Compare Products" link')
+def test_compare_products_link_redirecting():
+    compare_products.add_product_to_compare()
+    compare_products.compare_products_link.click()
+    compare_products.page_heading_should_have_text("Compare Products")
+
