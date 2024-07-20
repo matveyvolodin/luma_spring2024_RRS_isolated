@@ -53,7 +53,7 @@ jobs:
           name: allure-results
           path:
             allure-results
-          retention-days: 2
+          retention-days: 1
 
 
 
