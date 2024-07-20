@@ -32,9 +32,13 @@ compare_products_page = 'https://magento.softwaretestingboard.com/catalog/produc
 compare_products_block = s('#block-compare-heading')
 product_name_in_the_compare_products_block = s('(//strong[@class="product-item-name"])[last()]')
 product_name_on_the_compare_product_page = s('//strong[@class="product-item-name"]')
+
 # Push it messanger bag page
 product_url = 'https://magento.softwaretestingboard.com/push-it-messenger-bag.html'
 add_to_compare_button = s('//a[@class="action tocompare"]')
+
+compare_products_link = s('//a[@class="action compare"]')
+compare_products_heading = s('//h1[@class="page-title"]/span')
 
 
 def visit(url):
@@ -48,4 +52,8 @@ def compare_products_block_should_be_presented_on_the_page():
 def add_product_to_compare():
     visit(product_url)
     add_to_compare_button.click()
+
+
+def page_heading_should_have_text(text):
+    compare_products_heading.should(have.text(text))
 
