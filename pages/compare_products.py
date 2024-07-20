@@ -42,17 +42,24 @@ compare_products_heading = s('//h1[@class="page-title"]/span')
 added_to_compare_success_message = s('//div[@class="message-success success message"]/div')
 compare_list_link = s('//div[@class="message-success success message"]/div/a')
 
+compare_button = s('//a[@class="action compare primary"]')
+
+
 def visit(url):
     browser.open(url)
 
 
 def compare_products_block_should_be_presented_on_the_page():
-    compare_products_block.should(be.present)
+    compare_products_block.should(be.visible)
+
+
+def compare_button_should_be_presented_on_the_page():
+    compare_button.should(be.visible)
 
 
 def add_product_to_compare():
     visit(product_url)
-    add_to_compare_button.click()
+    add_to_compare_button.should(be.clickable).click()
 
 
 def page_heading_should_have_text(text):
