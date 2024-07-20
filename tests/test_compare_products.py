@@ -110,6 +110,7 @@ def test_compare_list_link_redirecting():
 #     compare_products.visit(catalog_page_url)
 #     compare_products.compare_button_should_be_presented_on_the_page()
 
+@allure.title('TC_013.001.0010 | Compare products | > "Compare" button is presented on every page in the catalog')
 def test_compare_button_is_presented_on_every_page_in_the_catalog():
     compare_products.add_product_to_compare()
 
