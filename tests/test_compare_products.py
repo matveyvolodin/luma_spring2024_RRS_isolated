@@ -106,7 +106,6 @@ def test_compare_list_link_redirecting():
 # )
 # def test_compare_button_is_presented_on_every_page_in_the_catalog(catalog_page_url):
 #     compare_products.add_product_to_compare()
-#     compare_products.success_message_should_have_text('You added product Push It Messenger Bag to the comparison list')
 #     compare_products.visit(catalog_page_url)
 #     compare_products.compare_button_should_be_presented_on_the_page()
 
@@ -185,3 +184,80 @@ def test_compare_button_is_presented_on_every_page_in_the_catalog():
 
     compare_products.visit(compare_products.gear_sale_page)
     compare_products.compare_button_should_be_presented_on_the_page()
+
+
+@allure.title('TC_013.001.011 | Compare products | > "Clear All" blue link is presented on every page in the catalog')
+def test_clear_all_link_is_presented_on_every_page_in_the_catalog():
+    compare_products.add_product_to_compare()
+
+    compare_products.visit(compare_products.whats_new_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_tops_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_bottoms_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_jackets_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_hoodies_and_sweatshirts_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_tees_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_bras_and_tanks_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_pants_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.women_shorts_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_tops_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_bottoms_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_jackets_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_hoodies_and_sweatshirts_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_tees_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_tanks_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_pants_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.men_shorts_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.gear_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.gear_bags_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.gear_fitness_equipment_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.gear_watches_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()
+
+    compare_products.visit(compare_products.gear_sale_page)
+    compare_products.clear_all_link_should_be_presented_on_the_page()

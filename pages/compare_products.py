@@ -1,4 +1,4 @@
-from selene import be, have, browser
+from selene import be, have, browser, query
 from selene.support.shared.jquery_style import s
 
 whats_new_page = 'https://magento.softwaretestingboard.com/what-is-new.html'
@@ -39,10 +39,11 @@ add_to_compare_button = s('//a[@class="action tocompare"]')
 
 compare_products_link = s('//a[@class="action compare"]')
 compare_products_heading = s('//h1[@class="page-title"]/span')
-added_to_compare_success_message = s('//div[@class="message-success success message"]/div')
+added_to_compare_status_message = s('//div[@class="messages"]/div/div')
 compare_list_link = s('//div[@class="message-success success message"]/div/a')
 
 compare_button = s('//a[@class="action compare primary"]')
+clear_all_link = s('//a[@id="compare-clear-all"]')
 
 
 def visit(url):
@@ -54,17 +55,22 @@ def compare_products_block_should_be_presented_on_the_page():
 
 
 def compare_button_should_be_presented_on_the_page():
-    compare_button.should(be.visible)
+    compare_button.should(be.clickable)
+
+
+def clear_all_link_should_be_presented_on_the_page():
+    clear_all_link.should(be.clickable)
 
 
 def add_product_to_compare():
     visit(product_url)
     add_to_compare_button.should(be.clickable).click()
+    # This part of code is needed because of magenta 'Invalid Form Key. Please refresh the page.' error
+    while not (added_to_compare_status_message.get(query.text) ==
+               "You added product Push It Messenger Bag to the comparison list."):
+        add_to_compare_button.should(be.clickable).click()
 
 
 def page_heading_should_have_text(text):
     compare_products_heading.should(have.text(text))
 
-
-def success_message_should_have_text(text):
-    added_to_compare_success_message.should(have.text(text))
