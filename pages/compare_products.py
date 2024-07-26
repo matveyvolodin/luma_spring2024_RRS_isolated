@@ -1,5 +1,6 @@
 from selene import be, have, browser, query
 from selene.support.shared.jquery_style import s
+from selenium.webdriver.common.alert import Alert
 
 whats_new_page = 'https://magento.softwaretestingboard.com/what-is-new.html'
 women_page = 'https://magento.softwaretestingboard.com/women.html'
@@ -45,6 +46,9 @@ compare_list_link = s('//div[@class="message-success success message"]/div/a')
 compare_button = s('//a[@class="action compare primary"]')
 clear_all_link = s('//a[@id="compare-clear-all"]')
 
+clear_all_modal_window_text = s('(//div[@class="modal-content"])[last()]')
+clear_all_modal_window_ok_button = s('//button[@class="action-primary action-accept"]')
+empty_compare_products_block = s('(//div[@class="empty"])[1]')
 
 def visit(url):
     browser.open(url)
@@ -73,4 +77,3 @@ def add_product_to_compare():
 
 def page_heading_should_have_text(text):
     compare_products_heading.should(have.text(text))
-
