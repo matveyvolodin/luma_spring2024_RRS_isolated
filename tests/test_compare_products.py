@@ -278,3 +278,18 @@ def test_clearing_compare_products_using_clear_all_link():
     compare_products.empty_compare_products_block.should(have.text('You have no items to compare.'))
 
 
+@allure.title('TC_013.001.013 | Compare products | > Removing specific product from the "Compare Products"'
+              ' list after clicking product tittle in the list')
+def test_removing_the_product_from_compare_using_product_title_in_compare_block():
+    compare_products.add_product_to_compare()
+    compare_products.visit(compare_products.whats_new_page)
+    compare_products.delete_specific_product_button.click()
+    compare_products.clear_all_modal_window_text.should(have.text('Are you sure you want to remove this item'
+                                                                  ' from your Compare Products list?'))
+    compare_products.clear_all_modal_window_ok_button.click()
+    compare_products.empty_compare_products_block.should(have.text('You have no items to compare.'))
+
+
+
+
+

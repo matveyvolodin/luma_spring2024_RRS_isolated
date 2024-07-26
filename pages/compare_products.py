@@ -50,6 +50,9 @@ clear_all_modal_window_text = s('(//div[@class="modal-content"])[last()]')
 clear_all_modal_window_ok_button = s('//button[@class="action-primary action-accept"]')
 empty_compare_products_block = s('(//div[@class="empty"])[1]')
 
+delete_specific_product_button = s('//a[@class="action delete"]')
+
+
 def visit(url):
     browser.open(url)
 
@@ -77,3 +80,4 @@ def add_product_to_compare():
 
 def page_heading_should_have_text(text):
     compare_products_heading.should(have.text(text))
+
